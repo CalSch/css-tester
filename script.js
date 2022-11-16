@@ -1,4 +1,4 @@
-let frameDoc=document.querySelector('iframe').contentDocument;
+let frameDoc=document.querySelector('iframe#frame').contentDocument;
 let oldVal="";
 
 setInterval(()=>{
