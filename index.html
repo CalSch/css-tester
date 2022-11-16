@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS Tester</title>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main id="layout">
+		<div class="title">
+			<h1>CSS Tester</h1>
+		</div>
+
+		<div id="editor"></div>
+	
+		<iframe id="frame" src="test.html" frameborder="0"></iframe>
+	
+		<footer>
+			<p>By CalSch</p>
+		</footer>
+	</main>
+
+	<script src="monaco-editor/min/vs/loader.js"></script>
+	<script>
+		require.config({ paths: { vs: 'monaco-editor/min/vs' } });
+		require(['vs/editor/editor.main'], function () {
+			var editor = monaco.editor.create(document.getElementById('editor'), {
+				releaseEvents,
+				language: 'css',
+			});
+		});
+	</script>
+
+	<script src="script.js"></script>
+</body>
+</html>
