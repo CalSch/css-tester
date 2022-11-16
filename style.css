@@ -19,11 +19,19 @@ body {
 }
 
 main .title { grid-area: 1 / 1 / 2 / 3; }
-div#editor { grid-area: 2 / 1 / 3 / 2; }
-main iframe { grid-area: 2 / 2 / 3 / 3; }
+.code { grid-area: 2 / 1 / 3 / 2; }
+.frame { grid-area: 2 / 2 / 3 / 3; }
 footer { grid-area: 3 / 1 / 4 / 3; }
 
+#editor {
+	box-sizing: border-box;
+	height: calc(100% - 51px);
+	border: 1px solid black;
+	border-radius: 2px;
+}
+
 main .title {
+	box-sizing: border-box;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -36,15 +44,30 @@ main .title h1 {
 	text-align: center;
 }
 
-main iframe {
+iframe {
 	box-sizing: border-box;
 	border: 1px solid black;
 	border-radius: 2px;
 	width: 100%;
-	height: 100%;
+	height: calc(100% - 51px);
 }
 
 footer {
 	background-color: lightgray;
 	padding: 10px;
+}
+
+@media only screen and (max-width: 650px) {
+	#layout {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 120px repeat(2, 1fr) 90px;
+		grid-column-gap: 5px;
+		grid-row-gap: 5px;
+	}
+	
+	main .title { grid-area: 1 / 1 / 2 / 2; }
+	.code { grid-area: 2 / 1 / 3 / 2; }
+	.frame { grid-area: 3 / 1 / 4 / 2; }
+	footer { grid-area: 4 / 1 / 5 / 2; }
 }
