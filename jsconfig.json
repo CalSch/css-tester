@@ -1,3 +1,4 @@
 {
-	"files": ["script.js", "monaco-editor/monaco.d.ts"]
+	"files": ["script.js","monaco-editor/monaco.d.ts"],
+	"include": ["monaco-editor/min/vs"]
 }
